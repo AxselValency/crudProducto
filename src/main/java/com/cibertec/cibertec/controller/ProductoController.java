@@ -29,7 +29,7 @@ public class ProductoController {
         return productoService.getAllProductos();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("buscarPorId/{id}")
     public ResponseEntity<Producto> getProductoById(@PathVariable int id) {
         Producto producto = productoService.getProductoById(id);
         if (producto == null) {
@@ -44,7 +44,7 @@ public class ProductoController {
         return productoService.createProducto(producto);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<Producto> ActualizarProducto(@PathVariable int id, @RequestBody Producto producto) {
         Producto updatedProducto = productoService.updateProducto(id, producto);
         if (updatedProducto == null) {
